@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<pfsensepkgs>
+	<package>
+		<name>BirdVector4</name>
+		<website>https://birdvector.cloudie.network</website>
+		<descr>
+			<![CDATA[BirdVector client package
+			]]>
+		</descr>
+		<pkginfolink>https://birdvector.cloudie.network/</pkginfolink>
+		<version>%%PKGVERSION%%</version>
+		<configurationfile>birdvector.xml</configurationfile>
+	</package>
+</pfsensepkgs>
