@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# $FreeBSD: head/net/birdvector/files/bird.in 454856 2017-11-24 23:17:50Z dbaio $
+#
+# PROVIDE: birdc
+# REQUIRE: FILESYSTEMS cleanvar
+# BEFORE: kld
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# bird_enable (bool):       Set to NO by default.
+#                           Set it to YES to enable bird.
+
+. /etc/rc.subr
+
+name=bird
+rcvar=bird_enable
+
+pidfile="/var/db/bird/bird.pid"
+
+load_rc_config ${name}
+
+: ${bird_enable:="YES"}
+command="/usr/local/sbin/bird"
+
+command_args="-d"
+
+run_rc_command "$1"
