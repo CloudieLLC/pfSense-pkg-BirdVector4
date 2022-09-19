@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE packagegui SYSTEM "../schema/packages.dtd">
+<?xml-stylesheet type="text/xsl" href="../xsl/package.xsl"?>
+<packagegui>
+	<name>BirdVector4</name>
+	<title>BirdVector</title>
+	<include_file>/usr/local/pkg/birdvector.inc</include_file>
+	<menu>
+		<name>BirdVector</name>
+		<section>Services</section>
+		<url>/birdvector.php</url>
+	</menu>
+	<service>
+		<name>BirdVector</name>
+		<rcfile>birdvector.sh</rcfile>
+		<executable>birdvector4</executable>
+		<description>BirdVector Package</description>
+		<starts_on_sync>true</starts_on_sync>
+	</service>
+	<custom_php_global_functions></custom_php_global_functions>
+	<custom_php_install_command>
+		birdvector_install();
+	</custom_php_install_command>
+	<custom_php_deinstall_command>
+		birdvector_deinstall();
+	</custom_php_deinstall_command>
+	<custom_add_php_command></custom_add_php_command>
+	<custom_add_php_command_late></custom_add_php_command_late>
+	<custom_delete_php_command></custom_delete_php_command>
+	<custom_php_resync_config_command>
+		birdvector_sync();
+	</custom_php_resync_config_command>
+	<start_command>
+	</start_command>
+	<process_kill_command>
+		birdvector_kill();
+	</process_kill_command>
+</packagegui>
